@@ -8,7 +8,7 @@ scalaVersion := "2.11.7"
 
 val scalaJSReactVersion = "0.10.4"
 
-val scalaCssVersion = "0.3.2"
+val scalaCssVersion = "0.4.0-SNAPSHOT"
 
 val reactJSVersion = "0.14.4"
 
@@ -48,4 +48,4 @@ artifactPath in (Compile, fastOptJS) := ((crossTarget in (Compile, fastOptJS)).v
 
 
 
-scalacOptions ++= Seq("-feature", "-language:postfixOps")
+scalacOptions ++= Seq("-feature", "-deprecation", "-language:postfixOps")
