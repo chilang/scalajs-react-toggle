@@ -85,15 +85,14 @@ object ReactToggle {
     import dsl._
 
     val reactToggleThumb = style(
-      transition:= "all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms"
-      ,position.absolute
+      position.absolute
       ,top(1.px)
       ,left(1.px)
       ,width(22.px)
       ,height(22.px)
       ,border:=! "1px solid #4D4D4D"
       ,borderRadius(50 %%)
-      ,backgroundColor:=! "#FAFAFA"
+      ,backgroundColor(c"#FAFAFA")
       ,boxSizing.borderBox
       ,transition:= "all 0.25s ease"
     )
@@ -103,7 +102,7 @@ object ReactToggle {
       ,height(24.px)
       ,padding.`0`
       ,borderRadius(30.px)
-      ,backgroundColor :=! "#4D4D4D"
+      ,backgroundColor(c"#4D4D4D")
       ,transition:= "all 0.2s ease"
     )
 
@@ -156,7 +155,7 @@ object ReactToggle {
 
     val reactToggleChecked = style(
       unsafeChild("."+reactToggleTrack.className.value)(
-        backgroundColor :=! "#19AB27"
+        backgroundColor(c"#19AB27")
       )
       ,unsafeChild("."+reactToggleTrackCheck.className.value)(
         opacity(1)
@@ -167,7 +166,7 @@ object ReactToggle {
       )
       ,unsafeChild("."+reactToggleThumb.className.value)(
         left(27.px)
-        ,borderColor:=! "#19AB27"
+        ,borderColor(c"#19AB27")
       )
     )
 
@@ -187,13 +186,13 @@ object ReactToggle {
       ,userSelect := "none"
       ,&.hover(
         unsafeChild("."+reactToggleTrack.className.value)(
-          backgroundColor :=! "#000000"
+          backgroundColor(c"#000000")
         )
       )
-      ,unsafeChild("."+reactToggleChecked.className.value)(
+      ,unsafeExt(_ + "."+reactToggleChecked.className.value)(
         &.hover(
           unsafeChild("."+reactToggleTrack.className.value)(
-            backgroundColor:=! "#128D15"
+            backgroundColor(c"#128D15")
           )
         )
       )
